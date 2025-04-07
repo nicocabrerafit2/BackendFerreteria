@@ -1,10 +1,12 @@
 import express from 'express';
 import apiRoutes from './routes/index.js';
-import dotenv from 'dotenv'
+import helmet from 'helmet';
+import cors from 'cors';
 
-dotenv.config();
 const app = express();
 
+app.use(cors());
+app.use(helmet());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -22,10 +24,4 @@ app.get('/', (req, res) => {
         documentation: 'xxxx'
     });
 });
-
-
-const PORT = process.env.PORT || 3000;
-
-app.listen(PORT, () => {
-    console.log(`Servidor corriendo en http://localhost:${PORT}`);
-});
+export default app
