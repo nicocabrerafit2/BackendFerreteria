@@ -1,0 +1,1 @@
+revisando server,conect mongo, app, factory aplicar mejoras , errores mas declarativos, agregar try catch, 

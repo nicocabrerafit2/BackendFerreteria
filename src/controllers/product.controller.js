@@ -4,7 +4,7 @@ import { BasicController } from './basic.controller.js';
 export class ProductController extends BasicController {
     constructor() {
         super();
-        this.basicService = new ProductService(); 
+        this.service = new ProductService(); 
     }
 
 }

@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const productSchema = new mongoose.Schema({
   name: {
@@ -26,6 +26,12 @@ const productSchema = new mongoose.Schema({
     required: true,
     trim: true
   },
+  sku: {
+    type: String,
+    required: true,
+    unique: true, 
+    trim: true
+  }, 
   images: {
     type: [String],
     validate: {
@@ -35,12 +41,6 @@ const productSchema = new mongoose.Schema({
       },
       message: 'Cada imagen debe ser una URL válida.'
     }
-  },
-  sku: {
-    type: String,
-    required: true,
-    unique: true, 
-    trim: true
   }
 }, {
   timestamps: true 

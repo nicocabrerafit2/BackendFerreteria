@@ -2,7 +2,7 @@ import { BasicService } from '../services/basic.service.js';
 
 export class BasicController {
     constructor() {
-        this.basicService = new BasicService();
+        this.service = new BasicService();
     }
 
     async getAll(req, res) {
